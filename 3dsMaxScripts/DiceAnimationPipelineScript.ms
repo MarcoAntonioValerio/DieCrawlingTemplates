@@ -4,12 +4,12 @@
 --------------------------------------------------
 -------------------UI--------------------------
 --Creates an actual floating UI without this line no UI is rendered on the screen --	
-	btnThing = newrolloutfloater "Die Crawling Dice Animation Tool" 600 600
+	btnThing = newrolloutfloater "Die Crawling Dice Animation Tool" 350 400
 --Adds the Rollouts to the floater
    addrollout newRollout1 btnThing
 
 --This Rollout is to manage the D4
-rollout newRollout1 "Automation Magic" width:300 height:1000
+rollout newRollout1 "Automation Magic" width:300 height:1400
 (
 	
 	-----ANIMATION BUTTONS-----
@@ -56,18 +56,18 @@ rollout newRollout1 "Automation Magic" width:300 height:1000
 	
 	
 	----------------------------DEBUG BUTTONS----------------------------------------------------
-	button btn2 "[TESTING]Move to  D4 to Green Screen" pos:[123,20]width:100 height:40
+	button btn2 "Move to  D4 to Green Screen" pos:[123,20]width:100 height:40
 	
 	on btn2 pressed do
 	(
 		--Creates variables to store the positions of the objects
-	   obj1 = $D4_Anim
+	   obj = $D4_Anim
 	   target = $Target_01
 	   --Next Line does executes the movement
-	   obj1.position = target.position
+	   obj.position = target.position
 		
 	)
-	button btn3 "[TESTING]Move D4 To Original Position" pos:[223,20]width:100 height:40
+	button btn3 "Move D4 To Original Position" pos:[223,20]width:100 height:40
 	on btn3 pressed do
 	(
 		--Creates variables to store the positions of the objects
@@ -77,47 +77,47 @@ rollout newRollout1 "Automation Magic" width:300 height:1000
 	   obj.position = target.position
 		
 	)
-	button btn4 "[TESTING]Move D6 To Original Position" pos:[223,60]width:100 height:40
+	button btn4 "Move D6 To Original Position" pos:[223,60]width:100 height:40
 	on btn4 pressed do
 	(
 		--Creates variables to store the positions of the objects
-	   obj = $D6_Anim
+	   obj1 = $D6_Anim
 	   newTarget = $Target_D6
 	   --Next Line does executes the movement
-	   obj.position = newTarget.position
+	   obj1.position = newTarget.position
 		
 	)
-		button btn7 "[TESTING]Move D6 To Green Screen" pos:[123,60]width:100 height:40
+		button btn7 "Move D6 To Green Screen" pos:[123,60]width:100 height:40
 	on btn7 pressed do
 	(
 		--Creates variables to store the positions of the objects
 	   obj1 = $D6_Anim
-	   target = $Target_01
+	   target1 = $Target_01
 	   --Next Line does executes the movement
-	   obj1.position = target.position
+	   obj1.position = target1.position
 		
 	)
-	button btn8 "[TESTING]Move D8 To Green Screen" pos:[123,100]width:100 height:40
+	button btn8 "Move D8 To Green Screen" pos:[123,100]width:100 height:40
 	on btn8 pressed do
 	(
 		--Creates variables to store the positions of the objects
-	   obj1 = $D8_Anim
-	   target = $Target_01
+	   obj2 = $D8_Anim
+	   target2 = $Target_01
 	   --Next Line does executes the movement
-	   obj1.position = target.position
+	   obj2.position = target2.position
 		
 	)
-	button btn9 "[TESTING]Move D8 To Original Position" pos:[223,100]width:100 height:40
+	button btn9 "Move D8 To Original Position" pos:[223,100]width:100 height:40
 	on btn9 pressed do
 	(
 		--Creates variables to store the positions of the objects
-	   obj = $D8_Anim
-	   newTarget = $Target_D8
+	   obj2 = $D8_Anim
+	   target2 = $Target_D8
 	   --Next Line does executes the movement
-	   obj.position = newTarget.position
+	   obj2.position = target2.position
 		
 	)
-	button btn13 "[TESTING]Move D10 To Green Screen" pos:[123,140]width:100 height:40
+	button btn13 "Move D10 To Green Screen" pos:[123,140]width:100 height:40
 	on btn13 pressed do
 	(
 		--Creates variables to store the positions of the objects
@@ -127,7 +127,7 @@ rollout newRollout1 "Automation Magic" width:300 height:1000
 	   obj1.position = target.position
 		
 	)
-	button btn14 "[TESTING]Move D8 To Original Position" pos:[223,140]width:100 height:40
+	button btn14 "Move D8 To Original Position" pos:[223,140]width:100 height:40
 	on btn14 pressed do
 	(
 		--Creates variables to store the positions of the objects
@@ -137,7 +137,7 @@ rollout newRollout1 "Automation Magic" width:300 height:1000
 	   obj.position = newTarget.position
 		
 	)
-	button btn15 "[TESTING]Move D12 To Green Screen" pos:[123,180]width:100 height:40
+	button btn15 "Move D12 To Green Screen" pos:[123,180]width:100 height:40
 	on btn15 pressed do
 	(
 		--Creates variables to store the positions of the objects
@@ -147,7 +147,7 @@ rollout newRollout1 "Automation Magic" width:300 height:1000
 	   obj1.position = target.position
 		
 	)
-	button btn16 "[TESTING]Move D12 To Original Position" pos:[223,180]width:100 height:40
+	button btn16 "Move D12 To Original Position" pos:[223,180]width:100 height:40
 	on btn16 pressed do
 	(
 		--Creates variables to store the positions of the objects
@@ -167,7 +167,7 @@ rollout newRollout1 "Automation Magic" width:300 height:1000
 	   obj1.position = target.position
 		
 	)
-		button btn18 "[TESTING]Move D20 To Original Position" pos:[223,220]width:100 height:40
+		button btn18 "Move D20 To Original Position" pos:[223,220]width:100 height:40
 	on btn18 pressed do
 	(
 		--Creates variables to store the positions of the objects
@@ -176,6 +176,16 @@ rollout newRollout1 "Automation Magic" width:300 height:1000
 	   --Next Line does executes the movement
 	   obj.position = newTarget.position
 		
+	)
+	button btn19 "ONE BUTTON TO ANIMATE THEM ALL!" pos:[123,260]width:100 height:40
+	on btn19 pressed do
+	(
+		AnimateD4()
+		AnimateD6()
+		AnimateD8()
+		AnimateD10()
+		AnimateD12()
+		AnimateD20()		
 	)
 	
 )	
@@ -190,8 +200,7 @@ function AnimateD4 =
 	--Creates variables to store the positions of the objects
 	   obj1 = $D4_Anim
 	   target = $Target_01
-	   --Next Line does executes the movement
-	   obj1.position = target.position
+	  
 	--Starts Recording
 		 set animate on
 	    --to go to frame 30	
@@ -242,8 +251,7 @@ function AnimateD6 =
 		--Creates variables to store the positions of the objects
 	   obj2 = $D6_Anim
 	   target = $Target_01
-	   --Next Line does executes the movement
-	   obj2.position = target.position
+	  
 		--Starts Recording
 		 set animate on
 	    --to go to frame 30	
@@ -285,7 +293,7 @@ function AnimateD6 =
 		--to go to frame 300
 		 sliderTime = 300f
 		 -- rotate is to rotate the object  diagonally on the -X and -Z  positively		
-	    rotate obj1 (angleaxis 360 [0.5,0, -0.5])	
+	    rotate obj2 (angleaxis 360 [0.5,0, -0.5])	
 		set animate off	
 		
 	   
@@ -295,8 +303,7 @@ function AnimateD8 =
 		--Creates variables to store the positions of the objects
 	   obj3 = $D8_Anim
 	   target = $Target_01
-	   --Next Line does executes the movement
-	   obj3.position = target.position
+	   
 		--Starts Recording
 		 set animate on
 	    --to go to frame 30	
@@ -346,8 +353,7 @@ function AnimateD10 =
 		--Creates variables to store the positions of the objects
 	   obj4 = $D10_Anim
 	   target = $Target_01
-	   --Next Line does executes the movement
-	   obj4.position = target.position
+	   
 		--Starts Recording
 		 set animate on
 	    --to go to frame 30	
@@ -397,8 +403,7 @@ function AnimateD12 =
 		--Creates variables to store the positions of the objects
 	   obj5 = $D12_Anim
 	   target = $Target_01
-	   --Next Line does executes the movement
-	   obj5.position = target.position
+	
 		--Starts Recording
 		 set animate on
 	    --to go to frame 30	
@@ -448,8 +453,7 @@ function AnimateD20 =
 		--Creates variables to store the positions of the objects
 	   obj6 = $D20_Anim
 	   target = $Target_01
-	   --Next Line does executes the movement
-	   obj6.position = target.position
+	   
 		--Starts Recording
 		 set animate on
 	    --to go to frame 30	
@@ -497,8 +501,14 @@ function AnimateD20 =
 
 -----------------END OF DICE FUNCTIONS-----------------------
 	
-	
-	
+-------------RENDERING----------	
+--TO FINISH (MAYBE)
+function Renering = 
+(
+	max vpt camera	
+	actionMan.executeAction 0 "60010"  -- Render: Render SetUp...
+)
+
    
 	
 	
